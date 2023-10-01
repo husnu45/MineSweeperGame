@@ -38,7 +38,7 @@ public class Minesweeper {
         }
     }
 
-    // Mayınların Tahtaya Rastgele Yerleştirilmesi
+    // Mayınların Tahtaya Rastgele Yerleştirilmesi (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 4)
 
     public void addMines() {
         Random random = new Random();  // Mayınları yerleştirmek için kullanacağımız Random objemiz.
@@ -97,13 +97,14 @@ public class Minesweeper {
             String rowSign = "\u2192";
             String colSign = "\u2193";
 
-            // Kullanıcıdan satır ve sütun numarasını alma.
+            // Kullanıcıdan satır ve sütun numarasını alma. (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 5)
             System.out.print("Please Select Row " + rowSign + " : ");
             int row = getDataFromUser.nextInt();
             System.out.print("Please Select Column " + colSign + " : ");
             int col = getDataFromUser.nextInt();
 
             // Kullanıcıdan alınan satır sütun değerlerinin geçersiz olması durumunda uyarı verip döngünün devam ettirilmesi. (Oyun tahtası dışında ya da negatif olma durumu)
+            // (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 6)
             if (row < 0 || row >= rows || col < 0 || col >= columns) {
                 System.out.println("Invalid Selection ! Please Select Valid Row and Column...");
                 continue;
@@ -117,13 +118,13 @@ public class Minesweeper {
 
             openedCellsInBoard[row][col] = true; // Seçilen hücrenin açık olarak işaretlenmesi.
 
-            if (gameBoard[row][col].equals("*")) {  // Seçilen Hücrede Mayın Olması Durumu
+            if (gameBoard[row][col].equals("*")) {  // Seçilen Hücrede Mayın Olması Durumu (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 9)
                 char unicodeCross = '✟';
 
                 showGameBoard();  // Oyun tahtasının gösterilmesi
                 System.out.println();
                 System.out.println("************************************");
-                System.out.println(unicodeCross + " KABOOM...You Stepped on a Mine...RIP " + unicodeCross); // Oyunu kaybetme durumunda verilen mesaj çıktısı.
+                System.out.println(unicodeCross + " KABOOM...You Stepped on a Mine...RIP " + unicodeCross); // Oyunu kaybetme durumunda verilen mesaj çıktısı. (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 10)
                 System.out.println("************************************");
 
 
@@ -152,7 +153,7 @@ public class Minesweeper {
                 System.out.println("************************************");
                 System.out.println(dangerSign + " The Mines Around " + dangerSign + " : " + minePerimeter);
 
-                if (minePerimeter == 0) {  // Etrafında mayın olmaması durumunda boş olan hücrelerin açılması koşulu.
+                if (minePerimeter == 0) {  // Etrafında mayın olmaması durumunda boş olan hücrelerin açılması koşulu.(DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 8)
                     openEmptyCells(row, col);
                     gameBoard[row][col] = "0"; // Sıfır ile işaretle
                 }
@@ -162,7 +163,7 @@ public class Minesweeper {
                     char uniCodeVictory = '✌';
                     String smiley = "☺";
                     showGameBoard();
-                    System.out.println(uniCodeVictory + smiley + " CONGRATULATIONS YOU WON THE GAME !!! " + smiley + uniCodeVictory);
+                    System.out.println(uniCodeVictory + smiley + " CONGRATULATIONS YOU WON THE GAME !!! " + smiley + uniCodeVictory); // (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR > MADDE 10)
                     isGameOver = true;
                 }
             }
@@ -211,12 +212,12 @@ public class Minesweeper {
         }
     }
 
-    // Oyunun Kazanılıp Kazanılmama Durumunun Kontrol Edilmesi
+    // Oyunun Kazanılıp Kazanılmama Durumunun Kontrol Edilmesi (DEĞERLENDİRME FORMU > TEMEL FONKSİYONLAR MADDE 10)
 
     boolean isGameWon() {
         int closedCells = 0;
 
-        // Oyun alanındaki hücrelerin taranması ve açılmamıi hücrelerin sayılması.
+        // Oyun alanındaki hücrelerin taranması ve açılmamış hücrelerin sayılması.
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (!openedCellsInBoard[i][j]) {
