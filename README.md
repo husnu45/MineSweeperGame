@@ -6,7 +6,7 @@ Game basicly playable in console.(No GUI used)
 
 ### How to Play 
 
-![gamerules](https://github.com/husnu45/MineSweeperGame/assets/120014374/22b94909-f14c-416c-b9c2-1f58c7be0709)
+[gamerules](https://github.com/husnu45/MineSweeperGame/assets/120014374/22b94909-f14c-416c-b9c2-1f58c7be0709)
 
 ### Creating Field Size by Player
 Before starting game , player decides the size of row & column to create field size.
